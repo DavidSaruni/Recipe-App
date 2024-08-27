@@ -56,4 +56,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //intuitive - handle change of screen sizes
+    implementation("com.intuit.sdp:sdp-android:1.0.6")
+    implementation("com.intuit.ssp:ssp-android:1.0.6")
+
+    //gif - shows the loading animation
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.23")
 }
