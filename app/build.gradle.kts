@@ -40,7 +40,7 @@ android {
 
 dependencies {
     val nav_version = "2.7.7"
-    val lifecycle_version = "2.5.1" // Updated to stable release
+    val lifecycle_version = "2.4.0-alpha02"
 
     // Core libraries
     implementation(libs.androidx.core.ktx)
@@ -76,8 +76,18 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.12.0")
 
     // ViewModel and LiveData (MVVM architecture components)
+    // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
-    implementation("androidx.arch.lifecycle:extensions:2.2.0")
-    annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.8.5")
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+
+    // Saved state module for ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version")
+
+    // Annotation processor
+    annotationProcessor("androidx.lifecycle:lifecycle-compiler:$lifecycle_version")
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
 }
