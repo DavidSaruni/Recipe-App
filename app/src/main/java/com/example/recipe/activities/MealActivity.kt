@@ -51,6 +51,7 @@ class MealActivity : AppCompatActivity() {
     private fun onYoutubeImgClick() {
         binding.imgYoutube.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeLink))
+            startActivity(intent)
         }
     }
 
@@ -59,7 +60,6 @@ class MealActivity : AppCompatActivity() {
             meal?.let {
                 onResponseCase()
                 binding.tvCategory.text = "Category: ${meal.strCategory}"
-                binding.tvArea.text = "Area: ${meal.strArea}"
                 binding.tvArea.text = "Area: ${meal.strArea}"
                 binding.tvInstructions.text = meal.strInstructions
 
